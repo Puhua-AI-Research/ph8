@@ -1,0 +1,119 @@
+.container {
+  height: 100%;
+  padding: 20px 20px;
+
+  .tabBarExtraContent {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    gap: 10px;
+
+    max-width: 800px;
+    overflow-x: auto;
+  }
+
+  .pageWrapper {
+    display: flex;
+
+    .main {
+      flex: 7;
+      width: 0;
+    }
+
+    .rightSide {
+      align-self: flex-start;
+      flex: 3;
+      max-width: 440px;
+      width: 240px;
+
+      margin-top: 60px;
+      margin-left: 20px;
+
+      &>*+* {
+        margin-top: 10px;
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 10px 16px;
+        border-radius: 4px;
+
+        &>*+* {
+          margin-top: 10px;
+        }
+
+        .title {
+          font-weight: bold;
+          font-size: 16px;
+
+          overflow-wrap: break-word;
+          // white-space: nowrap;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+        }
+
+        .description {
+          overflow-wrap: break-word;
+        }
+
+        .multiLineEllipsis {
+          // display: -webkit-box;
+          // -webkit-box-orient: vertical;
+          // -webkit-line-clamp: 2;
+          // line-clamp: 2;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+        }
+      }
+
+      .operation {
+        &>*+* {
+          margin-top: 10px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+
+      .footer {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 10px 16px;
+        border-radius: 4px;
+
+        &>*+* {
+          margin-top: 10px;
+        }
+
+        .item {
+          overflow-wrap: break-word;
+          // white-space: nowrap;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1920px) {
+  .container {
+    padding-left: calc(20px + (100vw - 1000px) / 11.5);
+    padding-right: calc(20px + (100vw - 1000px) / 11.5);
+
+    .rightSide {
+      width: calc(240px + (100vw - 1000px) / 4.6);
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    .rightSide {
+      width: 440px;
+    }
+  }
+}

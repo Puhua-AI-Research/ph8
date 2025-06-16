@@ -1,0 +1,3 @@
+com.puhua.framework.mq.redis.config.PuhuaRedisMQProducerAutoConfiguration
+com.puhua.framework.mq.redis.config.PuhuaRedisMQConsumerAutoConfiguration
+com.puhua.framework.mq.rabbitmq.config.PuhuaRabbitMQAutoConfiguration

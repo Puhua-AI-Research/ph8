@@ -1,0 +1,94 @@
+.flexWrapper {
+  display: flex;
+
+  .container {
+    flex: 1;
+    width: 0;
+
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .banner {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .header {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+
+      .modelCategory {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        &>button {
+          border-radius: 20px;
+        }
+
+        button.active {
+          outline: 1px solid #00F0FF;
+        }
+      }
+
+      .searchBox {
+        margin-left: auto;
+      }
+    }
+
+    .main {
+      display: flex;
+      gap: 20px;
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      flex-wrap: wrap;
+
+      .modelItem {
+        width: 308px;
+        height: 510px;
+        border-radius: 6px;
+        border: #00F0FF 1px solid;
+        display: flex;
+        flex-direction: column;
+
+        .cover {
+          border-radius: 6px;
+          cursor: pointer;
+
+          img {
+            border-radius: 6px;
+            width: 100%;
+            // 不指定图片的高度，宽度占满，高度按照比例
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+          }
+        }
+
+        .content {
+          padding: 15px 15px 10px 15px;
+
+          .title {
+            font-size: 16px;
+            margin-bottom: 8px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .multiLineEllipsis {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

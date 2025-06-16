@@ -1,0 +1,53 @@
+.container {
+    height: calc(100vh - 80px);
+    display: flex;
+
+    .showLeftSideBar {
+        position: absolute;
+        z-index: 20;
+        top: 12px;
+        left: 24px;
+    }
+
+    .leftSide {
+        padding-top: 20px;
+        flex: 3;
+        height: 100%;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        min-width: 380px;
+        max-width: 510px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &.hideParam {
+            display: none;
+        }
+
+        :global {
+            .ant-tabs-content-holder {
+                overflow-y: auto;
+            }
+        }
+
+        .leftSideHeader {
+            position: absolute;
+            z-index: 20;
+            top: 12px;
+            right: -44px;
+        }
+
+        .footer {
+            padding: 20px 20px 30px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .rightContent {
+        flex: 7;
+        height: 100%;
+        position: relative;
+    }
+}

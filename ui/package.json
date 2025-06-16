@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "author": "old colder <xiongjiannnew@163.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "ahooks": "^3.8.4",
+    "antd": "^5.23.2",
+    "axios": "^1.7.9",
+    "classnames": "^2.5.1",
+    "clipboard-copy": "^4.0.1",
+    "dayjs": "^1.11.13",
+    "github-markdown-css": "^5.8.1",
+    "immer": "^10.1.1",
+    "katex": "^0.16.21",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.30.0",
+    "qrcode.react": "^4.2.0",
+    "qs": "^6.14.0",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "umi": "^4.3.36",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/plugins": "^4.3.36",
+    "typescript": "^5.0.3"
+  }
+}

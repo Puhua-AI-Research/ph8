@@ -1,0 +1,3 @@
+com.puhua.framework.datasource.config.PuhuaDataSourceAutoConfiguration
+com.puhua.framework.mybatis.config.PuhuaMybatisAutoConfiguration
+com.puhua.framework.translate.config.PuhuaTranslateAutoConfiguration

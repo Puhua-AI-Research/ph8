@@ -1,0 +1,5 @@
+com.puhua.framework.security.config.PuhuaSecurityRpcAutoConfiguration
+com.puhua.framework.security.config.PuhuaSecurityAutoConfiguration
+com.puhua.framework.security.config.PuhuaWebSecurityConfigurerAdapter
+com.puhua.framework.operatelog.config.PuhuaOperateLogConfiguration
+com.puhua.framework.operatelog.config.PuhuaOperateLogRpcAutoConfiguration

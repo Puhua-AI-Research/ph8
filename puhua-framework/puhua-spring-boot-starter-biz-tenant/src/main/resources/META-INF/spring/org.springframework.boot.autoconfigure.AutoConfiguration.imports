@@ -1,0 +1,2 @@
+com.puhua.framework.tenant.config.PuhuaTenantRpcAutoConfiguration
+com.puhua.framework.tenant.config.PuhuaTenantAutoConfiguration

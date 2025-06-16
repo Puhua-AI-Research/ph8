@@ -1,0 +1,181 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nacos
+      - MYSQL_USER=nacos
+      - MYSQL_PASSWORD=nacos
+    command: --default-authentication-plugin=mysql_native_password
+    network_mode: host
+
+  nacos:
+    image: nacos-server:v2.1.0
+    container_name: nacos
+    volumes:
+      - ./nacos/logs/:/home/nacos/logs
+      - ./nacos/init.d/:/home/nacos/init.d
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+    environment:
+      - PREFER_HOST_MODE=hostname
+      - MODE=standalone
+      - SPRING_DATASOURCE_PLATFORM=mysql
+      - MYSQL_SERVICE_HOST=127.0.0.1
+      - MYSQL_SERVICE_DB_NAME=nacos
+      - MYSQL_SERVICE_PORT=3306
+      - MYSQL_SERVICE_USER=nacos
+      - MYSQL_SERVICE_PASSWORD=nacos
+      - MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useSSL=false
+    depends_on:
+      - mysql
+    restart: always
+    network_mode: host
+
+  openapi-xxl-job:
+    image: openapi-xxl-job:1.0
+    container_name: openapi-xxl-job
+    volumes:
+      - ./xxl-job/logs:/root/logs/
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    ports:
+      - "10380:10380"
+    depends_on:
+      - openapi-pay
+    network_mode: host
+
+  openapi-gateway:
+    image: openapi-gateway:1.0
+    container_name: openapi-gateway
+    ports:
+      - "10300:10300"
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./gateway/logs:/root/logs/
+    depends_on:
+      - nacos
+    restart: always
+    network_mode: host
+
+  openapi-system:
+    image: openapi-system:1.0
+    container_name: openapi-system
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./system/logs:/root/logs/
+    restart: always
+    depends_on:
+      - nacos
+    network_mode: host
+
+  openapi-infra:
+    image: openapi-infra:1.0
+    container_name: openapi-infra
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./infra/logs:/root/logs/
+    restart: always
+    depends_on:
+      - nacos
+    network_mode: host
+
+  openapi-member:
+    image: openapi-member:1.0
+    container_name: openapi-member
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./member/logs:/root/logs/
+    restart: always
+    depends_on:
+      - nacos
+    network_mode: host
+
+  openapi-ai:
+    image: openapi-ai:1.0
+    container_name: openapi-ai
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./ai/logs:/root/logs/
+    restart: always
+    ports:
+      - "10304:10304"
+    depends_on:
+      - nacos
+    network_mode: host
+  
+  openapi-pay:
+    image: openapi-pay:1.0
+    container_name: openapi-pay
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./pay/logs:/root/logs/
+    restart: always
+    ports:
+      - "10305:10305"
+    depends_on:
+      - nacos
+    network_mode: host
+  
+  openapi-mp:
+    image: openapi-mp:1.0
+    container_name: openapi-mp
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_SERVER_ADDR=127.0.0.1:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE=dev
+    volumes:
+      - ./mp/logs:/root/logs/
+    restart: always
+    ports:
+      - "10306:10306"
+    depends_on:
+      - nacos
+    network_mode: host
+
+  openapi-web:
+    image: openapi-web:1.0
+    container_name: openapi-web
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+      - ./web/logs:/root/logs/
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - openapi-gateway
+    network_mode: host

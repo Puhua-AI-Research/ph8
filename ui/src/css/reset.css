@@ -1,0 +1,171 @@
+/* Reset default styles */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+Ï b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Reset HTML5 elements */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Reset default text styles */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+kbd,
+code,
+var {
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* Reset default list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Reset default table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset default hr styles */
+hr {
+    height: 1px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset default link styles */
+a {
+    text-decoration: none;
+}
+
+/* Reset default image styles */
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/* Reset default background styles */
+/*div[data-background] {
+ background-image: url(/path/to/image.jpg);
+ background-size: cover;
+ background-position: center;
+}*/
+
+/* Reset default text effect styles */
+mark {
+    font-weight: bold;
+}

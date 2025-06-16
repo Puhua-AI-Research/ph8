@@ -1,0 +1,37 @@
+.markdown-body {
+    font-size: 14px;
+    color: unset;
+    background-color: unset;
+
+    --puhua-dark-color-background-default: rgba(6, 8, 12, 0.9) !important;
+    --puhua-dark-color-border-default: #30363d !important;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    border-bottom: unset !important;
+}
+
+.markdown-body table,
+.markdown-body th,
+.markdown-body td {
+    background-color: var(--puhua-dark-color-background-default) !important;
+    border-color: var(--puhua-dark-color-border-default) !important;
+}
+
+.markdown-body a {
+    color: #00F0FF !important;
+}
+
+/* .markdown-body pre {
+    background-color: #06080C;
+    border: 1px solid var(--puhua-dark-color-border-default);
+}
+.markdown-body code {
+    background-color: #06080C;
+    color: #c9d1d9;
+} */

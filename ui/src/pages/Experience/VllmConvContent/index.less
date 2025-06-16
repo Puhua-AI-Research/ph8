@@ -1,0 +1,197 @@
+.convContent {
+    height: 100%;
+    padding: 60px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+
+    .main {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+        gap: 30px;
+
+        .convItem {
+            display: flex;
+            gap: 20px;
+
+            .convRole {
+                width: 30px;
+            }
+
+            .convText {
+                position: relative;
+                flex: 1;
+                width: 0;
+                // width: min-content;
+
+                .convAction {
+                    display: none;
+                }
+
+                &.assistant {
+                    padding: 16px 16px 36px 16px;
+                    background: #FFFFFF08;
+                }
+
+                &.assistant {
+                    .convAction {
+                        display: block;
+                        position: absolute;
+                        left: 16px;
+                        bottom: 10px;
+                        display: flex;
+                        gap: 10px;
+                    }
+                }
+
+                &:not(.assistant)>*+* {
+                    margin-top: 8px;
+                }
+
+                .userImg {
+                    max-width: 100%;
+                }
+
+                .thinkContent {
+                    margin-bottom: 10px;
+                    padding-left: 10px;
+                    border-left: 1px solid rgba(255, 255, 255, 0.3);
+                    color: #808080;
+                }
+            }
+        }
+    }
+
+    .intro {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &>*+* {
+            margin-top: 10px;
+        }
+
+        .titleWrapper {
+            display: flex;
+
+            .title {
+                flex: 1;
+                max-width: 700px;
+                font-size: 20px;
+                margin-bottom: 8px;
+                word-break: break-all;
+                overflow-wrap: break-word;
+
+                .modelName {
+                    color: #00F0FF;
+                }
+            }
+        }
+
+        img {
+            width: 140px;
+            height: 140px;
+        }
+    }
+
+    .clearConv {
+        margin: 16px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .footer {
+        margin-top: auto;
+
+        &>*+* {
+            margin-top: 16px;
+        }
+
+        .uploadImgWrapper {
+            max-height: 220px;
+            overflow-y: auto;
+            display: flex;
+            // 隐藏滚动条
+            scrollbar-width: none;
+
+            // 隐藏滚动条样式
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .uploadImg {
+                flex: 1;
+                width: 0;
+                // width: min-content;
+
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        :global {
+            .ant-upload.ant-upload-select {
+                width: 53px;
+                height: 53px;
+            }
+
+            .ant-upload-list-item-container {
+                width: 53px !important;
+                height: 53px !important;
+            }
+        }
+
+        .questionWrapper {
+            position: relative;
+
+            .sendBtnWrapper {
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .uploadIcon {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            textarea {
+                padding-right: 50px;
+                padding-left: 60px;
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    border-bottom: 1px solid #FFFFFF1A;
+    background-color: #15171a;
+    padding: 10px 40px 10px 60px;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1920px) {
+    .convContent {
+        padding-left: calc(20px + (100vw - 1000px) / 9.2);
+        padding-right: calc(20px + (100vw - 1000px) / 9.2);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .convContent {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}

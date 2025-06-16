@@ -1,0 +1,2 @@
+com.puhua.framework.redis.config.PuhuaRedisAutoConfiguration
+com.puhua.framework.redis.config.PuhuaCacheAutoConfiguration

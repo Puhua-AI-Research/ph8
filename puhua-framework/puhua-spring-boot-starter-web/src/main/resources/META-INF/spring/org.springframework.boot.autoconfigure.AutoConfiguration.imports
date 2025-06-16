@@ -1,0 +1,6 @@
+com.puhua.framework.apilog.config.PuhuaApiLogAutoConfiguration
+com.puhua.framework.jackson.config.PuhuaJacksonAutoConfiguration
+com.puhua.framework.swagger.config.PuhuaSwaggerAutoConfiguration
+com.puhua.framework.web.config.PuhuaWebAutoConfiguration
+com.puhua.framework.apilog.config.PuhuaApiLogRpcAutoConfiguration
+com.puhua.framework.banner.config.PuhuaBannerAutoConfiguration

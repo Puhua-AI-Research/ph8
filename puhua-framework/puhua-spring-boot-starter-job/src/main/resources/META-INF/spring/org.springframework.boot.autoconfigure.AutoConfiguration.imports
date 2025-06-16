@@ -1,0 +1,2 @@
+com.puhua.framework.quartz.config.PuhuaXxlJobAutoConfiguration
+com.puhua.framework.quartz.config.PuhuaAsyncAutoConfiguration

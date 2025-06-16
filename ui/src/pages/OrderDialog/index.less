@@ -1,0 +1,139 @@
+.modalContainer {
+  :global {
+    .ant-modal-content {
+      box-shadow: 0px 0px 12px 7px rgba(0, 240, 255, 0.24);
+      border-radius: 10px 10px 10px 10px;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+    }
+  }
+
+  .modalContent {
+    padding: 16px 36px;
+
+    .title {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .header {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .productList {
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      .productCard {
+        cursor: pointer;
+        height: 130px;
+        padding: 20px 30px;
+        background: #1A1F24;
+        border-radius: 10px;
+        border: 1px solid rgba(153, 153, 153, 0.1);
+
+        display: flex;
+        gap: 20px;
+
+        &.disabled {
+          opacity: 0.8;
+        }
+
+        &.disabled:not(.selected) {
+          cursor: not-allowed;
+          background-color: rgba(211, 211, 211, 0.1);
+        }
+
+        &.selected {
+          outline: 2px solid rgba(0, 240, 255, 0.9)
+        }
+
+        &:hover {
+          border: 1px solid rgba(0, 240, 255, 0.3)
+        }
+
+        .content {
+          .name {
+            font-size: 24px;
+            background: linear-gradient(90deg, #00F0FF, #02E941);
+            /* 将背景剪切到文本 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* 让文本填充透明，以显示背景渐变 */
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+          }
+
+          .price {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .purchaseWarning {
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+
+    .buyBtnWrapper {
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 440px;
+        border-radius: 4px;
+      }
+    }
+
+    .payWrapper {
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      gap: 40px;
+
+      .qrPlacement {
+        background-color: white;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .payContent {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &>*+* {
+          margin-top: 10px;
+        }
+
+        .payPrice {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        .payChannel {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+
+        .timeDigit {
+          font-size: 20px;
+          color: #00F0FF;
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+}

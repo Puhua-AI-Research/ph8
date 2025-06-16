@@ -1,0 +1,60 @@
+.menuItem {
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 1px 0;
+    padding-left: 25px;
+
+    &.collapsed {
+        padding-left: 20px;
+    }
+
+    &>*+* {
+        margin-left: 14px;
+    }
+
+    &.selected {
+        position: relative;
+        color: #00F0FF;
+        background: linear-gradient(90deg, rgba(0, 178, 189, 0) 0%, rgba(0, 178, 189, 0.8) 50%, rgba(0, 178, 189, 0) 100%);
+        border-radius: 6px;
+    }
+
+    &.selected::before {
+        content: "";
+        position: absolute;
+        cursor: initial;
+        display: block;
+        height: 50px;
+        border-right: 4px solid #00B2BD;
+        border-top: 0;
+        border-bottom: 0;
+        transform: translate(-40px);
+    }
+
+    &.collapsed.selected::before {
+        transform: translate(-30px);
+    }
+
+    &:not(.selected):hover {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+}
+
+.menuDivider {
+    margin: 10px 0;
+    height: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menuGroup {
+    font-size: 12px;
+    margin: 20px 0 10px 25px;
+
+    &.collapsed {
+        margin: 20px 0px 10px 0px;
+        text-align: center;
+    }
+}

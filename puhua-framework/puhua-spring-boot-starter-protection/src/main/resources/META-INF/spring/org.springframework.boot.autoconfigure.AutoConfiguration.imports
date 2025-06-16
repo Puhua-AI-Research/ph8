@@ -1,0 +1,4 @@
+com.puhua.framework.idempotent.config.PuhuaIdempotentConfiguration
+com.puhua.framework.lock4j.config.PuhuaLock4jConfiguration
+com.puhua.framework.ratelimiter.config.PuhuaRateLimiterConfiguration
+com.puhua.framework.signature.config.PuhuaApiSignatureAutoConfiguration

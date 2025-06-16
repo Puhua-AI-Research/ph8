@@ -1,0 +1,80 @@
+.headerWrapper {
+    background-color: #06080C;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .logoWrapper {
+        margin-left: 26px;
+        display: flex;
+        align-items: center;
+
+        // .showMenuBtn {
+        //     display: none;
+        //     cursor: pointer;
+        //     margin-right: 34px;
+        // }
+
+        .menuCollapse {
+            display: inline-block;
+            cursor: pointer;
+            margin-right: 34px;
+        }
+
+        .logoImg {
+            width: 40px;
+        }
+
+        .title {
+            margin-left: 14px;
+            font-size: 20px;
+        }
+    }
+
+    .userInfo {
+        margin-left: auto;
+        margin-right: 40px;
+        display: flex;
+        align-items: center;
+
+        & > * + * {
+            margin-left: 30px;
+        }
+
+        .points {
+            width: 220px;
+            height: 46px;
+            background: #FFFFFF1A;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+
+            & > * + * {
+                margin-left: 6px;
+            }
+
+            & > :last-child {
+                margin-left: auto;
+                border-radius: 60px;
+            }
+        }
+
+        .userNameWrapper {
+            display: flex;
+            align-items: center;
+
+            & > * + * {
+                margin-left: 8px;
+            }
+
+            .userAvatar {
+                cursor: pointer;
+            }
+
+            .userName {
+                cursor: pointer;
+            }
+        }
+    }
+}

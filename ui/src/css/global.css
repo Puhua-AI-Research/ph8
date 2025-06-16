@@ -1,0 +1,45 @@
+html {
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* 滚动条整体 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* 滚动条手柄 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+/* 当鼠标悬停在滚动条手柄上时 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.bodyNoScroll {
+    overflow-y: hidden;
+}
+
+/* 链接样式 */
+a {
+    color: #00F0FF;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(0, 240, 255, 0.8);
+}
